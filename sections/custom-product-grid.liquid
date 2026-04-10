@@ -4,19 +4,21 @@
     {% for block in section.blocks %}
       {% assign product = block.settings.product %}
 
-      {% if product %}
-        <div class="card" data-handle="{{ product.handle }}">
+      <div class="card" data-handle="{{ product.handle }}">
+        {% if product %}
           <img 
             src="{{ product.featured_image | image_url: width: 500 }}"
-            width="{{ product.featured_image.width }}"
-            height="{{ product.featured_image.height }}"
+            width="500"
+            height="500"
             alt="{{ product.title }}"
             loading="lazy"
-        >
+          >
           <h3>{{ product.title }}</h3>
           <p>{{ product.price | money }}</p>
-        </div>
-      {% endif %}
+        {% else %}
+          <div style="color:red;">No product selected</div>
+        {% endif %}
+      </div>
 
     {% endfor %}
 
@@ -58,7 +60,9 @@
   ],
   "max_blocks": 6,
   "presets": [
-    { "name": "Custom Product Grid" }
+    {
+      "name": "Custom Product Grid"
+    }
   ]
 }
 {% endschema %}
