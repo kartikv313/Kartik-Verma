@@ -19,11 +19,9 @@
 
 /* GRID LAYOUT */
 .product-grid-section .grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 30px !important;
 }
 
 /* CARD */
