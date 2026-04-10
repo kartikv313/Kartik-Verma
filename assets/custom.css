@@ -32,6 +32,10 @@
   padding: 60px 40px;
 }
 
+.product-grid-section {
+  padding: 60px 40px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
