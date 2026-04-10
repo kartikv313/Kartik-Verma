@@ -15,8 +15,6 @@
           >
           <h3>{{ product.title }}</h3>
           <p>{{ product.price | money }}</p>
-        {% else %}
-          <div style="color:red;">No product selected</div>
         {% endif %}
       </div>
 
@@ -30,7 +28,7 @@
   <div class="popup-inner">
     <span class="close">&times;</span>
 
-    <img id="popup-img" width="400" height="400" alt="Product Image">
+    <img id="popup-img" width="400" height="400">
     <h2 id="popup-title"></h2>
     <p id="popup-price"></p>
     <p id="popup-desc"></p>
@@ -60,9 +58,7 @@
   ],
   "max_blocks": 6,
   "presets": [
-    {
-      "name": "Custom Product Grid"
-    }
+    { "name": "Custom Product Grid" }
   ]
 }
 {% endschema %}
