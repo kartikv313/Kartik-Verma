@@ -20,43 +20,18 @@
   color: black;
 }
 
-.product-grid-section {
-  padding: 60px 20px;
-}
 
 .product-grid-section .grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .product-grid-section .card {
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  width: calc(33.33% - 20px);
 }
-
-.product-grid-section .card:hover {
-  transform: translateY(-6px);
-}
-
-.product-grid-section .card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.product-grid-section .card h3 {
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-.product-grid-section .card p {
-  color: #555;
-}
-
 
 
 .card {
