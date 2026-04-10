@@ -26,9 +26,10 @@
 
 .product-grid-section .grid {
   display: grid !important;
-  grid-template-columns: repeat(6, 1fr);
-  
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   gap: 30px !important;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .product-grid-section .card {
