@@ -28,13 +28,39 @@
   gap: 25px;
 }
 
+.product-grid-section {
+  padding: 60px 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
 .card {
-  cursor: pointer;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
 }
 
 .card img {
   width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.card p {
+  color: #555;
 }
 
 .popup {
