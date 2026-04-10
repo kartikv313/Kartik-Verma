@@ -1,0 +1,57 @@
+<section class="product-grid-section">
+  <div class="grid">
+
+    {% for block in section.blocks %}
+      {% assign product = block.settings.product %}
+
+      {% if product %}
+        <div class="card" data-handle="{{ product.handle }}">
+          <img src="{{ product.featured_image | image_url: width: 500 }}">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+        </div>
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+</section>
+
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-inner">
+    <span class="close">&times;</span>
+
+    <img id="popup-img">
+    <h2 id="popup-title"></h2>
+    <p id="popup-price"></p>
+    <p id="popup-desc"></p>
+
+    <select id="variant-select"></select>
+
+    <button id="add-to-cart">Add to Cart</button>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Product Grid",
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    { "name": "Custom Product Grid" }
+  ]
+}
+{% endschema %}
