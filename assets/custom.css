@@ -12,25 +12,12 @@
   color: white;
 }
 
-.custom-banner__btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 24px;
-  background: white;
-  color: black;
-}
-
-
 .product-grid-section .grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 30px !important;
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.product-grid-section .card {
-  width: calc(33.33% - 20px);
 }
 
 
