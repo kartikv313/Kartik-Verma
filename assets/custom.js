@@ -1,26 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const cards = document.querySelectorAll(".card");
-
-  cards.forEach(card => {
+  document.querySelectorAll(".card").forEach(card => {
     card.addEventListener("click", async () => {
       const handle = card.dataset.handle;
-      if (!handle) return;
 
       const res = await fetch(`/products/${handle}.js`);
       const product = await res.json();
 
-      openPopup(product);
+      showPopup(product);
     });
   });
 
-  document.querySelector(".close").addEventListener("click", () => {
+  document.querySelector(".close").onclick = () => {
     document.getElementById("popup").classList.add("hidden");
-  });
+  };
+
+  document.getElementById("add-to-cart").onclick = async () => {
+    const variantId = document.getElementById("variant-select").value;
+
+    await fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: variantId, quantity: 1 })
+    });
+
+    alert("Added to cart");
+  };
 
 });
 
-function openPopup(product) {
+function showPopup(product) {
   document.getElementById("popup-title").innerText = product.title;
   document.getElementById("popup-price").innerText = (product.price / 100).toFixed(2);
   document.getElementById("popup-desc").innerHTML = product.description;
