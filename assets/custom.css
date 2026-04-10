@@ -24,24 +24,35 @@
   padding: 60px 20px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+.product-grid-section .grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 30px !important;
 }
 
-.product-grid-section {
-  padding: 60px 40px;
+.product-grid-section .card {
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.product-grid-section {
-  padding: 60px 40px;
+.product-grid-section .card:hover {
+  transform: translateY(-6px);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+.product-grid-section .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-grid-section .card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.product-grid-section .card p {
+  color: #555;
 }
 
 .card {
