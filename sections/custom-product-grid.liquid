@@ -6,7 +6,13 @@
 
       {% if product %}
         <div class="card" data-handle="{{ product.handle }}">
-          <img src="{{ product.featured_image | image_url: width: 500 }}">
+          <img 
+            src="{{ product.featured_image | image_url: width: 500 }}"
+            width="{{ product.featured_image.width }}"
+            height="{{ product.featured_image.height }}"
+            alt="{{ product.title }}"
+            loading="lazy"
+        >
           <h3>{{ product.title }}</h3>
           <p>{{ product.price | money }}</p>
         </div>
