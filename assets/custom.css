@@ -1,0 +1,36 @@
+.custom-banner {
+  position: relative;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.custom-banner__content {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.custom-banner__content h1 {
+  font-size: 56px;
+}
+
+.custom-banner__btn {
+  padding: 12px 24px;
+  background: white;
+  color: black;
+  transition: 0.3s;
+}
+
+.custom-banner__btn:hover {
+  transform: translateY(-4px);
+}
