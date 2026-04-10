@@ -12,12 +12,53 @@
   color: white;
 }
 
+/* SECTION WRAPPER */
+.product-grid-section {
+  padding: 60px 20px;
+}
+
+/* GRID LAYOUT */
 .product-grid-section .grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 30px !important;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* CARD */
+.product-grid-section .card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.product-grid-section .card:hover {
+  transform: translateY(-6px);
+}
+
+/* IMAGE */
+.product-grid-section .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* TEXT */
+.product-grid-section .card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.product-grid-section .card p {
+  color: #555;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .product-grid-section .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 
